@@ -16,6 +16,9 @@ tlmgr install \
     biblatex \
     hyperxmp \
     csquotes \
+    comment \
+    listings \
+    microtype \
     soul \
     ifmtarg \
     totpages \
