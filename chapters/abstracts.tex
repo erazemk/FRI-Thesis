@@ -1,0 +1,48 @@
+% SWAP ORDER IF WRITING IN ENGLISH (so English first, then Slovenian, then uncomment
+% long Slovenian version - only if writing in English)
+\label{ch:abstract}
+
+%%% Slovenian abstract %%%
+\selectlanguage{slovenian}
+\addcontentsline{toc}{chapter}{Povzetek}
+\chapter*{Povzetek}
+\noindent\textbf{Title:} \tTitle
+\bigskip
+\noindent\textbf{Author:} \tAuthor
+\bigskip
+\noindent
+
+\lipsum[1-6] % Replace lipsum with around 100 words in Slovenian
+
+\bigskip
+\noindent\textbf{Ključne besede:} \tKeywords.
+%%% End of Slovenian abstract %%%
+
+%%% English abstract %%%
+\selectlanguage{english}
+\addcontentsline{toc}{chapter}{Abstract}
+\chapter*{Abstract}
+\noindent\textbf{Title:} \tTitleEn
+\bigskip
+\noindent\textbf{Author:} \tAuthor
+\bigskip
+\noindent
+
+\lipsum[1-6] % Replace lipsum with around 100 words in English
+
+\bigskip
+\noindent\textbf{Keywords:} \tKeywordsEn.
+%%% End of English abstract %%%
+
+\clearemptydoublepage
+
+%%% Long Slovenian abstract - Only uncomment if writing in English %%%
+\selectlanguage{slovene}
+\addcontentsline{toc}{chapter}{Daljši povzetek}
+\chapter*{Daljši povzetek}
+\label{ch:long-abstract}
+
+\lipsum[1-17] % Replace lipsum with 3-5 PAGES of text in Slovenian
+
+\clearemptydoublepage
+%%% End of long Slovenian abstract %%%
