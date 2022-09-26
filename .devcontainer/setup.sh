@@ -22,13 +22,13 @@ tlmgr install \
     soul \
     ifmtarg \
     totpages \
-    xmpincl
+    xmpincl \
+    babel-slovenian
 texhash
 
-echo "Updating base packages"
-apt-get update
-apt-get -y upgrade
-apt-get install -y texlive-lang-european
+# echo "Updating base packages"
+# apt-get update
+# apt-get -y upgrade
 
 clear
 cat << EOF
