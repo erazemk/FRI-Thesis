@@ -1,0 +1,69 @@
+\chapter{Plovke: slike in tabele}
+\label{ch2}
+
+Slike in daljše tabele praviloma vključujemo v dokument kot plovke.
+Pozicija plovke v končnem izdelku ni pogojena s tekom besedila, temveč z izgledom strani.
+\LaTeX\ bo skušal plovko postaviti samostojno, praviloma na mestu, kjer se pojavi v izvornem
+besedilu, sicer pa na vrhu strani, na kateri se na takšno plovko prvič sklicujemo.
+Pri tem pa bo na vsako stran končnega izdelka želel postaviti tudi sorazmerno velik del besedila.
+V skrajnem primeru, če imamo res preveč plovk na enem mestu besedila, ali če je plovka previsoka,
+se bo \LaTeX\ odločil za stran popolnoma zapolnjeno s plovkami.
+
+Poleg tega, da na položaj plovke vplivamo s tem, kam jo umestimo v izvorno besedilo, lahko na
+položaj plovke na posamezni strani prevedenega besedila dodatno vplivamo z opcijami
+\texttt{here, top} in \texttt{bottom}.
+Zelo velike slike je najbolje postaviti na posebno stran z opcijo \texttt{page}.
+Skaliranje slik po njihovi širini lahko prilagodimo širini strani tako, da kot enoto za širino
+uporabimo kar širino strani, npr. \verb=0.5\textwidth= bo raztegnilo sliko na polovico širine strani.
+Sliko lahko po potrebi tudi zavrtimo za 90 stopinj in jo razstegnemo na višino strani.
+Tako bodo podrobnosti na sliki lažje berljive in prostor na strani bo bolje izkoriščen.
+
+Na vse plovke se moramo v besedilu sklicevati, saj kot beseda plovka pove, plovke plovejo po
+besedilu in se ne pojavijo točno tam, kjer nastopajo v izvornem besedilu.
+Vendar naj bosta  sklic na plovko v besedilu in sama plovka v oblikovanem besedilu čim bližje
+skupaj, tako da bralcu ne bo potrebno listati po diplomi.
+Upoštevajte pa, da se naloge tiska dvostransko in da se hkrati vidi dve strani v dokumentu!
+Na to, kje se bo slika ali druga plovka pojavila v postavljenem besedilu lahko torej najbolj
+vplivamo tako, da v izvorni kodi plovko premikamo po besedilu nazaj ali naprej!
+
+Tabele je najbolje oblikovati kar neposredno v \LaTeX u, saj za oblikovanje tabel obstaja zelo
+fleksibilno okolje \texttt{tabular}.
+Slike pa je po drugi strani  pogosto najla\v zje oblikovati oziroma izdelati z drugimi orodji
+in programi, rezultate shraniti v formatu {\tt .pdf} ali {\tt .jpeg} in nato v \LaTeX u le
+vključiti ustrezno slikovno datoteko. Za pisanje besed, ki so vključene v slike, uporabite
+pisave/fonte, ki so čimbolj podobne pisavam v samem besedilu.
+
+Knjižnica \url{https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ}
+pa omo\-go\-ča risanje raznovrstnih grafov neposredno v okolju \LaTeX .
+
+Na vse tabele in slike se moramo v besedilu sklicevati, saj kot plovke v oblikovanem besedilu
+niso nujno na istem mestu kot v izvornem besedilu.
+Pri sklicevanju na slike uporabimo veliko začetnico, npr. ''glej Sliko \ref{pic1}'',
+saj gre za ime slike.
+
+\section{Formati slik}
+
+V dokument \LaTeX\ lahko vključimo slike različnih formatov, tako
+bitne slike kot vektorske slike. Najbolj primerne so slike v formatu {\tt .pdf}, saj je tudi samo
+oblikovano besedilo v tem formatu, in slike v formatu {\tt .jpeg}.
+Slika~\ref{pic1} je npr. v formatu {\tt .jpeg}.
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{resources/images/projections}
+    \end{center}
+    \caption{Virtualno obogatena skulptura \cite{vodnjak}.
+        Rezultate računalniško generirane animacije z video projektorjem projeciramo na kamnito
+        skulpturo, da ustvarimo vtis, kot da bi po skulpturi polzele vodne kapljice
+        \cite{video,solina2020skulpture}.}
+    \label{pic1}
+\end{figure}
+
+
+
+\section{Podnapisi k slikam in tabelam}
+
+Vsaki sliki ali tabeli moramo dodati podnapis, ki na kratko pojasnjuje, kaj je na sliki ali tabeli.
+Če nekdo le prelista diplomsko delo, naj bi že iz slik in njihovih podnapisov lahko na grobo razbral, kakšno temo naloga obravnava.
+
+Če slike povzamemo iz drugih virov, potem se moramo v podnapisu k taki sliki sklicevati na ta vir!
