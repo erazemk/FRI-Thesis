@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  vscode:
+    image: qmcgaw/latexdevcontainer:latest
+    volumes:
+      - ../:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./hello.sh:/root/.welcome.sh
+      - ./hello.sh:/usr/bin/hello
+      - ./setup.sh:/usr/bin/setup
+    environment:
+      - TZ=Europe/Ljubljana
+    entrypoint: [ "zsh", "-c", "while sleep 1000; do :; done" ]

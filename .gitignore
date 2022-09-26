@@ -1,0 +1,5 @@
+# LaTeX artifacts
+*.bcf
+*.pdf
+*.run.xml
+*.synctex.gz
