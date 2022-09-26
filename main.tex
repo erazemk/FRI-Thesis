@@ -1,0 +1,343 @@
+\documentclass[a4paper,12pt,openright]{book}
+
+% Optionally use 'draft' while writing, which shows overfull hboxes
+%\documentclass[a4paper, 12pt, openright, draft]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[slovene,english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{hyperxmp}
+\usepackage{csquotes}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{subfiles}
+\usepackage{color}
+\usepackage{soul}
+\usepackage[backend=biber, style=numeric, sorting=nty]{biblatex}
+\usepackage[
+    pdftex,
+    colorlinks=true,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    pagebackref=false,
+    pdfproducer={LaTeX},
+    pdfcreator={LaTeX},
+    hidelinks
+]{hyperref}
+
+\addbibresource{resources/literature.bib}
+\BiblatexSplitbibDefernumbersWarningOff
+
+
+%
+% Variables - used throughout the thesis code
+%
+\newcommand{\tTitle}{Vzorec diplomskega dela}
+\newcommand{\tTitleEn}{Diploma thesis template}
+\newcommand{\tSubject}{\tTitle}
+\newcommand{\tSubjectEn}{\tTitleEn}
+\newcommand{\tAuthor}{Jaz Jazjaz}
+\newcommand{\tKeywords}{računalnik, računalnik, računalnik}
+\newcommand{\tKeywordsEn}{computer, computer, computer}
+\newcommand{\tMentor}{(doc.) dr. Moj Mentor}
+\newcommand{\tThesisName}{DIPLOMSKO DELO}
+\newcommand{\tThesisPageName}{Diplomsko delo}
+\newcommand{\tThesisNameEn}{DIPLOMA THESIS}
+\newcommand{\tThesisPageNameEn}{Diploma thesis}
+\newcommand{\tUniversity}{Univerza v Ljubljani\\ Fakulteta za računalništvo in informatiko\\}
+\newcommand{\tUniversityEn}{University of Ljubljana\\ Faculty of Computer and Information Science\\}
+
+
+%
+% Study programme - choose one quadruple (English and Slovenian)
+%
+\newcommand{\tProgram}{UNIVERZITETNI ŠTUDIJSKI PROGRAM\\ PRVE STOPNJE\\ RAČUNALNIŠTVO IN INFORMATIKA}
+\newcommand{\tProgramEn}{UNIVERSITY STUDY PROGRAMME\\ FIRST CYCLE\\ COMPUTER AND INFORMATION SCIENCE}
+\newcommand{\tThesisType}{Diplomska naloga na univerzitetnem programu prve stopnje Računalništvo in informatika}
+\newcommand{\tThesisTypeEn}{Diploma thesis at the Computer and Information Science First cycle university study programme}
+
+% \newcommand{\tProgram}{VISOKOŠOLSKI STROKOVNI ŠTUDIJSKI PROGRAM\\ PRVE STOPNJE\\ RAČUNALNIŠTVO IN INFORMATIKA}
+% \newcommand{\tProgramEn}{PROFESSIONAL STUDY PROGRAMME\\ FIRST CYCLE\\ COMPUTER AND INFORMATION SCIENCE}
+% \newcommand{\tThesisType}{Diplomska naloga na visokošolskem strokovnem programu prve stopnje Računalništvo in informatika}
+% \newcommand{\tThesisTypeEn}{Diploma thesis at the Computer and Information Science first cycle professional study programme}
+
+% \newcommand{\tProgram}{INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ MULTIMEDIJA}
+% \newcommand{\tProgramEn}{INTERDISCIPLINARY UNIVERSITY STUDY PROGRAMME\\ MULTIMEDIA}
+% \newcommand{\tThesisType}{Diplomska naloga na univerzitetnem interdisciplinarnem programu prve stopnje Multimedija}
+% \newcommand{\tThesisTypeEn}{Diploma thesis at the Multimedia first cycle interdisciplinary university study programme}
+
+% \newcommand{\tProgram}{INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ UPRAVNA INFORMATIKA}
+% \newcommand{\tProgramEn}{INTERDISCIPLINARY UNIVERSITY STUDY PROGRAMME\\ ADMINISTRATIVE INFORMATION SYSTEMS}
+% \newcommand{\tThesisType}{Diplomska naloga na univerzitetnem interdisciplinarnem programu prve stopnje Upravna informatika}
+% \newcommand{\tThesisTypeEn}{Diploma thesis at the Administrative Information Systems first cycle interdisciplinary university study programme}
+
+% \newcommand{\tProgram}{INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ RAČUNALNIŠTVO IN MATEMATIKA}
+% \newcommand{\tProgramEn}{INTERDISCIPLINARY UNIVERSITY STUDY PROGRAMME\\ COMPUTER SCIENCE AND MATHEMATICS}
+% \newcommand{\tThesisType}{Diplomska naloga na univerzitetnem interdisciplinarnem programu prve stopnje Računalništvo in matematika}
+% \newcommand{\tThesisTypeEn}{Diploma thesis at the Computer Science and Mathematics first cycle interdisciplinary university study programme}
+
+
+%
+% Page setup
+%
+\addtolength{\marginparwidth}{-20pt}
+\addtolength{\oddsidemargin}{40pt}
+\addtolength{\evensidemargin}{-40pt}
+
+\renewcommand{\baselinestretch}{1.3}
+\setlength{\headheight}{15pt}
+\renewcommand{\chaptermark}[1]
+{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]
+{\markright{\MakeUppercase{\thesection.\ #1}}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[LE,RO]{\sl \thepage}
+\fancyhead[RE]{\sc \tAuthor}
+\fancyhead[LO]{\sc \tThesisPageName}
+
+\newcommand{\autfont}{\Large}
+\newcommand{\titfont}{\LARGE\bf}
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+\setcounter{tocdepth}{1}
+
+
+%
+% Constructs (choose when writing based on your thesis language)
+%
+
+% Slovenian
+\newtheorem{izrek}{Izrek}[chapter]
+\newtheorem{trditev}{Trditev}[izrek]
+\newenvironment{dokaz}{\emph{Dokaz.}\ }{\hspace{\fill}{$\Box$}}
+
+% English
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{statement}{Statement}[theorem]
+\newenvironment{proof}{\emph{Proof.}\ }{\hspace{\fill}{$\Box$}}
+
+
+%
+% PDF metadata
+%
+\def\Title{\tTitle}
+\def\Author{\tAuthor}
+\def\Subject{\tTitleEn}
+\def\Keywords{\tKeywordsEn}
+\pdfinfo{
+    /Title    (\tTitle)
+    /Author   (\tAuthor)
+    /Subject  (\tTitleEn)
+    /Keywords (\tKeywordsEn)
+    /ModDate  (\pdfcreationdate)
+    /Trapped  /False
+}
+
+
+%
+% Document structure (thesis body goes into separate files in chapters/)
+%
+\begin{document}
+\frontmatter
+\setcounter{page}{1}
+\renewcommand{\thepage}{}
+\newcommand{\sn}[1]{"`#1"'}
+
+
+%
+% Hyperref (choose either English or Slovenian options, but keep shared)
+%
+
+% Slovenian
+\hypersetup{pdftitle={\tTitle}}
+\hypersetup{pdfsubject={\tSubject}}
+\hypersetup{pdfkeywords={\tKeywords}}
+
+% English
+% \hypersetup{pdftitle={\tTitleEn}}
+% \hypersetup{pdfsubject={\tSubjectEn}}
+% \hypersetup{pdfkeywords={\tKeywordsEn}}
+
+% Shared, keep
+\hypersetup{pdfauthor={\tAuthor}}
+
+
+%
+% Language for chapters, table of contents etc. (choose based on main thesis language)
+%
+\selectlanguage{slovene}
+%\selectlanguage{english}
+
+
+%
+% English titlepage (uncomment if writing in English - DON'T COMMENT OUT SLOVENIAN VERSION,
+% BOTH ARE REQUIRED!)
+%
+% \thispagestyle{empty}
+% \begin{center}
+%     {\large\sc \tUniversityEn}
+%     \vskip 10em
+%         {\autfont \tAuthor \par}
+%         {\titfont \tTitleEn \par}
+%         {\vskip 3em \textsc{\tThesisNameEn\\[5mm]\tProgramEn} \par}
+%     \vfill\null
+%     {\large \textsc{Mentor}: \tMentor \par}
+%     {\vskip 2em \large Ljubljana, \the\year{} \par}
+% \end{center}
+
+
+%
+% Slovenian titlepage
+%
+\thispagestyle{empty}
+\begin{center}
+    {\large\sc \tUniversity}
+    \vskip 10em
+        {\autfont \tAuthor \par}
+        {\titfont \tTitle \par}
+        {\vskip 3em \textsc{\tThesisName\\[5mm]\tProgram} \par}
+    \vfill\null
+    {\large \textsc{Mentor}: \tMentor \par}
+    {\vskip 2em \large Ljubljana, \the\year{} \par}
+\end{center}
+
+
+%
+% Copyright page
+%
+\thispagestyle{empty}
+\vspace*{3cm}
+\noindent
+\subfile{resources/copyright/copyright}
+\clearemptydoublepage
+
+
+%
+% English thesis info (uncomment if writing in English - DON'T COMMENT OUT SLOVENIAN VERSION,
+% BOTH ARE REQUIRED IF WRITING IN ENGLISH!)
+%
+% \thispagestyle{empty}
+% \
+% \vfill
+% \bigskip
+% \noindent\textbf{Candidate:} \tAuthor \\
+% \noindent\textbf{Title:} \tTitleEn \\
+% \noindent\textbf{Thesis type:} \tThesisType \\
+% \noindent\textbf{Mentor:} \tMentor
+
+% \bigskip
+
+% \noindent\textbf{Description:} \\
+% Your thesis description (replace with English description from STUDIS)
+
+% \bigskip
+% \vfill
+% \newpage
+
+
+%
+% Slovenian thesis info
+%
+\thispagestyle{empty}
+\
+\vfill
+\bigskip
+\noindent\textbf{Kandidat:} \tAuthor \\
+\noindent\textbf{Naslov:} \tTitle \\
+\noindent\textbf{Vrsta naloge:} \tThesisType \\
+\noindent\textbf{Mentor:} \tMentor
+
+\bigskip
+
+\noindent\textbf{Opis:} \\
+Opis diplomskega dela (zamenjaj s slovenskim opisom iz STUDIS-a)
+
+\bigskip
+
+%%% IF WRITING IN ENGLISH YOU MUST COMMENT OUT THE FOLLOWING FEW LINES %%%
+\noindent\textbf{Title:} \tTitleEn
+
+\bigskip
+
+\noindent\textbf{Description:} \\
+Your thesis description (replace with English description from STUDIS)
+%%% COMMENT OUT UP TO THIS POINT %%%
+
+\vfill
+\clearemptydoublepage
+
+
+%
+% Acknowledgements (optional)
+%
+% \thispagestyle{empty}\mbox{}\vfill\null\it%
+% \noindent
+
+% \lipsum[1] % Replace lipsum with acknowledgements if you want
+
+% \rm\normalfont
+% \clearemptydoublepage
+
+
+%
+% Table of contents
+%
+\pagestyle{empty}
+\def\thepage{}
+\tableofcontents{}
+\clearemptydoublepage
+
+
+%
+% Abbreviations
+%
+\chapter*{Seznam uporabljenih kratic}
+%\chapter*{Abbreviations} % Choose this if writing in English (if so, comment out the above line)
+\subfile{chapters/abbreviations}
+\clearemptydoublepage
+
+
+%
+% Abstracts (edit in chapters/abstracts.tex)
+%
+\subfile{chapters/abstracts}
+
+
+%
+% Chapters (add new ones below as subfiles)
+%
+\mainmatter
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+%%% Add chapters here %%%
+\subfile{chapters/introduction}
+\subfile{chapters/osnovni-gradniki}
+\subfile{chapters/matematicno-okolje}
+\subfile{chapters/slike-in-tabele}
+\subfile{chapters/strokovna-besedila}
+\subfile{chapters/chapter-x}
+\subfile{chapters/conclusion}
+%%% End of adding chapters %%%
+
+\cleardoublepage
+
+%
+% Bibliography
+%
+\printbibliography[heading=bibintoc,type=article,title={Članki v revijah}]
+\printbibliography[heading=bibintoc,type=inproceedings,title={Članki v zbornikih}]
+\printbibliography[heading=bibintoc,type=incollection,title={Poglavja v knjigah}]
+\printbibliography[heading=bibintoc,title={Celotna literatura}]
+
+\end{document}
