@@ -23,8 +23,10 @@ tlmgr install \
     ifmtarg \
     totpages \
     xmpincl \
-    babel-slovenian
+    babel-slovenian \
+    hyphen-slovenian
 texhash
+fmtutil -sys --all
 
 # echo "Updating base packages"
 # apt-get update
