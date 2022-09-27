@@ -1,0 +1,96 @@
+\chapter{Kaj pa literatura?}
+\label{lit}
+
+Kot smo omenili že v uvodu, je pravi način za citiranje literature uporaba BibLaTeXa~\cite{biblatex}.
+BibLaTeX\ zagotovi, da pri določeni vrsti literature ne izpustimo nobene obvezne informacije
+in da vse informacije dosledno navajamo na enak način in po istem vrstnem redu.
+BibLaTeX\ je nadgradnja starejšega sistema BibTeX.
+Novejši sistem je bolje prilagojen slovenščini in navajanju spletnih virov.
+Sicer pa so starejše datoteke \texttt{.bib} kompatibilne z BibLaTeX om.
+
+Osnovna ideja BibLaTeXa je, da vse informacije o literaturi zapisujemo v posebno datoteko,
+v našem primeru je to \texttt{literatura.bib}.
+Vsakemu viru v tej datoteki določimo simbolično ime.
+V našem primeru je v tej datoteki nekaj najbolj značilnih zvrsti literature, kot so knjige~\cite{lamport},
+članki v revijah~\cite{leonardo} in zbornikih konferenc~\cite{ciuha2010visualization}, poglavja v
+knjigah~\cite{poglavje_springer}, spletni viri~\cite{slovarji,video}, tehnično
+poročilo~\cite{andersen2012kinect}, diplome~\cite{diploma} itd.
+Diploma~\cite{diploma} iz leta 1990 je bila prva diploma na tedanji Fakulteti za elektrotehniko
+in računalništvo, ki je bila oblikovana z \LaTeX om!
+Reference, ki so na spletnih straneh arhivirane v elektronski obliki, imajo običajno \v stevilko
+DOI (\url{http://dx.doi.org}), ki jo zato tudi vključimo v izpis literature in tako bralcu
+elektronske verzije naše publikacije ponudimo neposredno povezavo do elektronske kopije te reference.
+
+Po vsaki spremembi pri sklicu na literaturo moramo najprej prevesti izvorno besedilo s prevajalnikom
+\LaTeX, nato s prevajalnikom BibLaTeX, ki ustvari datoteko {\tt vzorec\_dip\_Seminar.bbl},
+in nato še dvakrat s prevajalnikom \LaTeX.
+V okolju Overleaf je to večkratno prevajanje z različnimi prevajalniki uporabniku skrito.
+Zato tudi začetnim uporabnikom \LaTeX a svetujemo uporabo Overleafa.
+
+Kako se spisek literature nato izpiše (ali so posamezni viri razvrščeni po vrstnem redu sklicevanja,
+ali po abecedi priimkov prvih avtorjev, ali se imena avtorjev pišejo pred priimki itd.) je odvisno
+od parametrov paketa BibLaTeX.
+V diplomi bomo uporabili parametre \texttt{style=numeric}, kar pomeni, da bodo sklici na literaturo
+v besedilu označeni z zaporednimi številkami, za vrstni red izpisa referenc pa \texttt{sorting=nty},
+kar pomeni, da bodo reference urejene po priimkih prvih avtorjev, nato po naslovu reference in
+nazadnje po letu izdaje~\cite{ctan}.
+Zato je potrebno pri določenih zvrsteh literature, ki nima avtorjev, dodati parameter \texttt{key},
+ki določi vrstni red vira po abecedi.
+
+Ko začenjamo uporabljati BibLaTeX\ je lažje, če za urejanje datoteke \texttt{.bib} uporabljamo kar
+isti urejevalnik kot za urejanje datotek \texttt{.tex}, čeprav obstajajo tudi posebni urejevalniki
+oziroma programi za delo z datotekami \texttt{.bib}.
+
+Le če se  na določen vir v besedilu tudi sklicujemo, se bo ta vir pojavil tudi v spisku literature.
+Tako je avtomatično zagotovljeno, da se na vsak vir v seznamu literature tudi sklicujemo v besedilu diplome.
+V datoteki \texttt{.bib} imamo sicer lahko veliko več virov za literaturo, kot jih bomo uporabili v diplomi.
+
+
+\section{Zbiranje virov za seznam literature}
+
+Vire v formatu \texttt{.bib} lahko enostavno poiščemo in prekopiramo iz spletnih strani založnikov
+ali različnih akademskih spletnih portalov za iskanje znanstvene literature.
+Izvoz referenc v Google učenjaku še dodatno poenostavimo, če v nastavitvah izberemo BibTeX\ kot
+želeni format za izvoz navedb.
+Navedbe, ki jih prekopiramo iz Google učenjaka in drugih podobnih akademskih portalov, moramo pred
+uporabo nujno preveriti, saj so taki navedki pogosto generirani povsem avtomatično in lahko
+vsebujejo napačne ali nepopolne podatke.
+Najpogosteje je napačen tip publikacije!
+
+Pri sklicevanju na literaturo na koncu stavka moramo paziti, da je pika po ukazu \verb=\cite{ }=.
+Da \LaTeX\ ne bi delil vrstico ravno tako, da bi sklic na literaturo v oglatih oklepajih začel novo
+vrstico, lahko pred sklicem na literaturo dodamo nedeljiv presledek: \verb=~\cite{ }=.
+
+Običajno se v besedilu sklicujemo  na nek vir ali več virov na koncu trdilnega stavka.
+Kadar pa omenimo avtorja nekega vira, pa sklic običajno vstavimo za njegovim priimkom.
+
+Dandanes se skoraj vsi pri iskanju informacij vedno najprej lotimo iskanja preko svetovnega spleta.
+Rezultati takega iskanja pa so pogosto spletne strani, ki danes obstajajo, jutri pa jih morda ne bo
+več, ali pa vsaj ne v taki obliki, kot smo jo prebrali.
+Smisel navajanja literature pa je, da tudi po dolgih letih nekdo, ki bo bral vašo diplomo, lahko
+poišče vire, ki jih navajate v diplomi.
+
+Znanstveni rezultati, ki so objavljeni v obliki recenziranih člankov, bodisi v konferenčnih
+zbornikih, še bolje pa v znanstvenih revijah, so veliko bolj izčiščen in zanesljiv vir informacij,
+saj so taki članki šli skozi recenzijske postopke.
+Predvsem pa so taki članki stabilen vir informacij, saj se načeloma po njihovi objavi ne spreminjajo več.
+Skoraj vsi ti članki so dandanes dosegljivi tudi v elektronski obliki, bodisi v arhivih založnikov,
+univerzitetnih repozitorijih ali tudi na osebnih spletnih straneh njihovih avtorjev.
+Zato na svetovnem spletu začenjamo iskati vire za strokovna besedila predvsem preko akademskih
+spletnih portalov, kot so npr. Google učenjak, Research Gate ali Academia, saj so na teh portalih
+rezultati iskanja le akademske publikacije.
+Če je za dostop do nekega članka potrebno plačati, se obrnemo za pomoč in dodatne informacije na našo knjižnico.
+
+Za označevanje člankov, ki so na voljo v elektronski obliki, se je v zadnjem času uveljavila oznaka DOI
+(\url{https://www.doi.org}), kar močno olajša iskanje teh referenc na spletu.
+Založniki tudi starejšim člankom, ki so na voljo v elektronski obliki, za nazaj določajo oznake DOI.
+Zato poskusite poiskati ustrezno oznako DOI za vsak članek, ki ga citirate in jo vključite v seznam literature.
+
+Če res ne gre drugače, pa je pomembno, da pri sklicevanju na običajni spletni vir vedno navedemo
+tudi datum, kdaj smo dostopali do tega vira.
+
+Z uporabo BibLaTeXa je možno natisniti seznam literature posebej za določene vrste referenc,
+na primer za članke v znanstvenih revijah, članke v konferenčnih zbornikih in poglavja v knjigah,
+kot je prikazano tudi v tem vzorcu diplome.
+Pri zbiranju literature si zato prizadevajte čimbolj napolniti sezname teh treh vrst referenc.
+

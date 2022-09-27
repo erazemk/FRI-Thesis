@@ -1,0 +1,25 @@
+\chapter{Skladnost s standardom PDF/A}
+\label{PDF}
+
+Elektronsko verzijo diplome je potrebno oddati preko sistema STUDIS v formatu PDF/A
+~\cite{howtopdfa,pdfa}, natančneje v formatu PDF/A-1b.
+PDF/A format je namenjen dolgoročnemu arhiviranju elektronskih dokumentov.
+Dokument v formatu PDF/A mora vsebovati vse potrebne informacije za prikazovanje in tiskanje dokumenta.
+To pomeni, da mora dokument vsebovati vso besedilo, vse slike, fonte in barvne informacije.
+Prva verzija standarda PDF/A, to je PDF/A-1 je bil objavljena leta 2005.
+Standard PDF/A-1 določa dva nivoja skladnosti: PDF/A-1a in PDF/A-1b.
+Nivo a (accesible) mora ustrezati vsem zahtevam standarda.
+Nivo b (basic) pa zahteva le, da se ohrani vizualni izgled dokumenta.
+Diplome, ki jih je potrebno oddati na sistemu STUDIS, morajo ustrezati nivoju standarda PDF/A-1b.
+
+\LaTeX\ in omenjeni format imata še nekaj težav s sobivanjem.
+Paket \texttt{pdfx.sty}, ki naj bi \LaTeX{u} omogočal podporo formatu PDF/A ne deluje vedno
+v skladu s pričakovanji.
+
+Zato raje priporočamo uporabo enega od mnogih spletnih mest, ki omo\-go\-ča\-jo konverzijo pdf
+datotek v obliko, ki je skladna s standardom PDF/A-1b, npr. \url{https://pdf.online/pdf-to-pdfa},
+kjer je možno tudi testirati, ali je neka pdf datoteka skladna s tem standardom.
+
+V predlogi so poleg izvornega dokumenta \texttt{diploma-FRI-vzorec.tex}, še vložena slika
+\texttt{galaksija.jpeg}, datoteka \texttt{literatura.bib} za uporabljeno literaturo ter
+ikone za licenco Creative Commons.

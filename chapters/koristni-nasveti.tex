@@ -1,0 +1,73 @@
+\chapter{Koristni nasveti pri pisanju v \LaTeX{u}}
+\label{latex}
+
+Programski paket \LaTeX\ je bil prvotno predstavljen v priročniku~\cite{lamport} in je v resnici
+nadgradnja sistema \TeX\ avtorja Donalda Knutha~\cite{knuth}, znanega po svojih knjigah o
+umetnosti programiranja ter Knuth-Bendixovem algoritmu~\cite{knuth1983simple}.
+\TeX\ in njegove izpeljanke so odprtokodni programi.
+
+Različnih implementacij \LaTeX{}a je cela vrsta.
+Za OS X priporočamo TeXShop, za Windows PC pa MikTeX.
+Spletna verzija, ki poenostavi sodelovanje pri pisanju, je Overleaf.
+
+Včasih smo si pri pisanju v \LaTeX{}u pomagali predvsem s tiskanimi pri\-ro\-čni\-ki~\cite{lamport},
+danes pa je enostavneje in hitreje, da ob vsakem problemu za pomoč enostavno povprašamo Google,
+saj je na spletu cela vrsta forumov za pomoč pri \TeX iranju.
+
+\LaTeX\ včasih ne zna pravilno deliti slovenskih besed, ki vsebujejo črke s streši\-ca\-mi.
+Če taka beseda štrli preko desnega roba, lahko \LaTeX{}u pokažemo, kje se tako besedo deli takole:
+\verb=ra\-ču\-nal\-ni\-štvo=.
+Katere vrstice so predolge lahko vidimo tako, da dokument prevedemo s vključeno opcijo
+\texttt{draft}: \verb=\documentclass[a4paper, 12pt, draft]{book}=.
+
+Predlagamo, da v izvornem besedilu začenjate vsak stavek v novi vrstici, saj \LaTeX\ sam
+razporeja besede po vrsticah postavljenega besedila.
+Bo pa zato iskanje po izvornem besedilu in popravljanje veliko hitrejše.
+Večina sistemov za \TeX{}iranje sicer omogoča s klikanjem enostavno prestopanje iz prevedenega
+besedila na ustrezno mesto v izvornem besedilu in obratno.
+
+Boljšo preglednost dosežemo tako kot pri pisanju programske kode -- z vizualnim urejanjem kode
+in izpuščanjem praznih vrstic.
+Pri spreminjanju in dodajanju izvornega besedila je najbolje pogosto prevajati, da se sproti
+prepričamo, če so naši nameni pravilno izpolnjeni.
+
+Kadar besedilo, ki je že bilo napisano z nekim vizualnim urejevalnikom (npr. z Wordom), želimo
+prenesti v \LaTeX, je tudi najbolje to delati postopoma s posameznimi bloki besedila, tako da
+lahko morebitne napake hitro identificiramo in odpravimo.
+Za prevajanje Wordovih datotek v \LaTeX\ -- in obratno -- sicer obstajajo prevajalniki, ki pa
+običajno ne generirajo tako čisto logično strukturo besedila, kot jo sicer \LaTeX\ omogoča.
+Hiter in enostaven način prevedbe besedila, ki  zahteva sicer ročne dopolnitve, lahko poteka
+tudi tako, da besedilo urejeno z vizualnim urejevalnikom najprej shranimo v formatu pdf,
+nato pa to besedilo uvozimo v urejevalnik, kjer urejamo izvorno besedilo v formatu \LaTeX.
+
+\section{Pisave v \LaTeX u}
+
+V  \LaTeX ovem okolju lahko načeloma uporabljamo poljubne pisave.
+Izbira poljubne pisave pa ni tako enostavna kot v vizualnih urejevalnikih besedil.
+Posamezne oblikovno medseboj usklajene pisave so običajno združene v družine pisav.
+V \LaTeX u se privzeta družina pisav imenuje Computer Modern, kjer so poleg navadnih črk
+(roman v \LaTeX u) na voljo tudi kurzivne črke (\textit{italic} v \LaTeX u),
+krepke (\textbf{bold} v \LaTeX u), kapitelke (\textsc{small caps} v \LaTeX u), linearne črke
+({\textsf{san serif} v \LaTeX u}), pisava pisalnega stroja (\texttt{typewriter} v \LaTeX u) in
+nekatere njihove kombinacije, npr. krepke linearne črke ({\textbf{\textsf{san serif}} v \LaTeX u}).
+V istem dokumentu zaradi skladnega izleda uporabljamo običajno le pisave ene družine.
+Pomembna je tudi konsistentna raba večih pisav in da ne pretiravamo z mešanjem različnih pisav.
+
+Ko začenjamo uporabljati \LaTeX, je zato najbolj smiselno uporabljati kar privzete pisave,
+s katerimi je napisan tudi ta dokument.
+Z ustreznimi ukazi  lahko nato preklapljamo med navadnimi, kurzivnimi, krepkimi in drugimi pisavami.
+Zelo enostavna je tudi izbira velikosti črk.
+\LaTeX\ odlično podpira večjezičnost, tudi v sklopu istega dokumenta, saj obstajajo pisave za
+praktično vse jezike, tudi take, ki ne uporabljajo latinskih črk.
+
+Za prikaz programske kode se pogosto uporablja pisava, kjer imajo vse črke enako širino, kot so
+črke na mehanskem pisalnem stroju ({\texttt{typewriter} v \LaTeX u}).
+
+Najbolj priročno okolje za pisanje kratkih izsekov programske kode je okolje \texttt{verbatim},
+saj ta ohranja vizualno organizacijo izvornega besedila in ima privzeto pisavo pisalnega stroja.
+
+\begin{verbatim}
+for (i = 0; i < 100; i++)
+   for (j = i; j < 10; j++)
+      some_function(i, j);
+\end{verbatim}
