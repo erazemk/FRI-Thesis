@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   vscode:
-    image: qmcgaw/latexdevcontainer:latest
+    image: qmcgaw/latexdevcontainer:latest-full
     volumes:
       - ../:/workspace
       - /var/run/docker.sock:/var/run/docker.sock
